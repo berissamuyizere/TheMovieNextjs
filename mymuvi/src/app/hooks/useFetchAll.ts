@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { fetchAllMovies } from "../utils/fecthAll";
 
-interface MovieType{
+ export interface MovieType{
   id: number;
   title: string;
   poster_path: string;
