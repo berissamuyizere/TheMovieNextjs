@@ -1,5 +1,5 @@
 
-const baseUrl ='/api/genre';
+
 
 export async function fetchGenres() {
   try {

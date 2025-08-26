@@ -1,4 +1,3 @@
-const baseUrl ='/api/allmovies';
 
 export async function fetchAllMovies() {
   try {

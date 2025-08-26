@@ -1,5 +1,4 @@
 
-const baseUrl ='/api/movie';
 
 export async function fetchMovieDetails(id:number) {
   try {
