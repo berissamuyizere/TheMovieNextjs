@@ -3,13 +3,17 @@
 import { useEffect, useState } from "react";
 import { fetchAllMovies } from "../utils/fecthAll";
 
- export interface MovieType{
+export interface MovieType {
   id: number;
   title: string;
   poster_path: string;
   genre_ids: number[];
-  release_date: string;
+  backdrop_path?: string;
   vote_average: number;
+  runtime?: number;
+  release_date?: string;
+  overview?: string;
+  number_of_episodes?: number;
 }
 
 const useFetchAllMovies = () => {
