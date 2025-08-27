@@ -83,9 +83,9 @@ const MovieLanding = () => {
             backgroundImage: `url(https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path || selectedMovie.poster_path})`,
           }}
         >
-          <div className="absolute bottom-10 left-0 p-4 bg-opacity-70 text-white max-w-7xl mx-auto">
+          <div className="absolute bottom-20 left-0 p-4 bg-opacity-70 text-black w-[35vw] mx-auto">
             <h2 className="text-4xl font-bold text-yellow-500 mb-1">{selectedMovie.title}</h2>
-            <div className="flex items-center text-gray-400 text-sm mb-2 space-x-2">
+            <div className="flex items-center text-gray-400 text-md mb-2 space-x-2">
               {selectedMovie.runtime && <span>{selectedMovie.runtime}m</span>}
               <span>•</span>
               {selectedMovie.release_date && <span>{selectedMovie.release_date.slice(0, 4)}</span>}
@@ -94,16 +94,16 @@ const MovieLanding = () => {
                 <span>{selectedMovie.number_of_episodes} Episodes</span>
               </>}
             </div>
-            <p className="text-gray-400 text-sm mb-4 leading-relaxed whitespace-pre-line">
+            <p className="text-gray-400 text-[23px] mb-4 leading-relaxed whitespace-pre-line">
               {selectedMovie.overview}
             </p>
             <div className="flex space-x-3">
-              <button className="bg-yellow-500 text-black px-4 py-1.5 rounded-full text-sm font-medium hover:bg-yellow-600 transition-colors">
+              <button className="bg-yellow-500 text-black px-17 py-4 rounded-md text-sm font-medium hover:bg-yellow-600 transition-colors">
                 Watch Now
               </button>
               <button
                 onClick={() => toggleFavorite(selectedMovie.id)}
-                className="bg-gray-800 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-gray-700 transition-colors"
+                className="bg-gray-800 text-white px-17 py-4 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors"
               >
                 {favorites.includes(selectedMovie.id) ? 'Remove From Favourites' : 'Add To Favourites'}
               </button>
@@ -121,7 +121,7 @@ const MovieLanding = () => {
         />
       </section>
 
-      <div className="flex space-x-2 p-4  bg-gray-900  mx-auto w-[90vw]">
+      <div className="flex space-x-2 p-4   mx-auto w-[90vw]">
         <button
           className="bg-yellow-500 text-black px-3 py-1 rounded-full"
           onClick={() => setSelectedGenreId(null)}
@@ -131,7 +131,7 @@ const MovieLanding = () => {
         {genres.map(genre => (
           <button
             key={genre.id}
-            className="bg-gray-800 text-white px-3 py-1 rounded-full hover:bg-gray-700 transition-colors"
+            className="bg-gray-800 text-white px-3 py-1 rounded-md hover:bg-gray-700 transition-colors text-[15px]"
             onClick={() => setSelectedGenreId(genre.id)}
           >
             {genre.name}
