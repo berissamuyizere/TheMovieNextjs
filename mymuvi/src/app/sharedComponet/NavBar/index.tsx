@@ -1,3 +1,6 @@
+
+import Link from "next/link";
+
 const NavBar = () => {
   return (
     <div>
@@ -12,10 +15,12 @@ const NavBar = () => {
         </div>
         <nav className="flex space-x-4">
           <a href="#" className="text-yellow-500 hover:underline">Home</a>
-          <a href="/my-list" className="text-yellow-500 hover:underline">My List</a>
+          <Link href="/mylist" className="text-yellow-500 hover:underline top-1">
+            My List
+          </Link>
           <a href="/signin">
-            <button className="bg-yellow-500 text-black px-4 py-2 rounded-full">Sign In</button> 
-            </a>
+            <button className="bg-yellow-500 text-black px-4 py-2 rounded-[14px]">Sign In</button>
+          </a>
         </nav>
       </header>
     </div>

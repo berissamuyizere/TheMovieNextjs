@@ -17,6 +17,16 @@ const MovieLanding = () => {
   const [favorites, setFavorites] = useState<number[]>([]);
   const [selectedMovie, setSelectedMovie] = useState<MovieType | null>(null);
 
+  useEffect(() => {
+    const saved = localStorage.getItem("favorites");
+    if (saved) setFavorites(JSON.parse(saved));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
+
+
   const userSelectedMovieRef = useRef(false);
   useEffect(() => {
     if (movies.length > 0 && !selectedMovie) {
