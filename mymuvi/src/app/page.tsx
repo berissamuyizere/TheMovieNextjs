@@ -63,8 +63,8 @@ const MovieLanding = () => {
   };
 
   const onMovieClick = (movie: MovieType) => {
-    userSelectedMovieRef.current = true; 
-    
+    userSelectedMovieRef.current = true;
+
   };
 
   if (moviesLoading || genresLoading)
@@ -78,12 +78,12 @@ const MovieLanding = () => {
 
       {selectedMovie && (
         <section
-          className="relative w-[98vw] h-[95vh] bg-cover bg-center"
+          className="relative w-[90vw] h-[95vh] bg-cover bg-center ml-19"
           style={{
             backgroundImage: `url(https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path || selectedMovie.poster_path})`,
           }}
         >
-          <div className="absolute bottom-10 left-0 p-4 bg-opacity-70 text-white w-full max-w-3xl">
+          <div className="absolute bottom-10 left-0 p-4 bg-opacity-70 text-white max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold text-yellow-500 mb-1">{selectedMovie.title}</h2>
             <div className="flex items-center text-gray-400 text-sm mb-2 space-x-2">
               {selectedMovie.runtime && <span>{selectedMovie.runtime}m</span>}
@@ -121,7 +121,7 @@ const MovieLanding = () => {
         />
       </section>
 
-      <div className="flex space-x-2 p-4 overflow-x-auto bg-gray-900 max-w-7xl mx-auto">
+      <div className="flex space-x-2 p-4  bg-gray-900  mx-auto w-[90vw]">
         <button
           className="bg-yellow-500 text-black px-3 py-1 rounded-full"
           onClick={() => setSelectedGenreId(null)}
@@ -140,14 +140,14 @@ const MovieLanding = () => {
         <span className="text-yellow-500 mt-1">›</span>
       </div>
 
-      <section className="p-4 max-w-7xl mx-auto">
+      <section className="p-4  mx-auto   w-[90vw]">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold">
             {selectedGenreId
               ? `Movies in ${genres.find(g => g.id === selectedGenreId)?.name || 'Selected Genre'}`
               : searchQuery.trim() !== ''
-              ? `Search results for "${searchQuery}"`
-              : 'Most viewed'}
+                ? `Search results for "${searchQuery}"`
+                : 'Most viewed'}
           </h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 overflow-x-auto">
@@ -170,19 +170,9 @@ const MovieLanding = () => {
                   <div className="w-full h-56 bg-gray-700 rounded-lg flex items-center justify-center">
                     No poster available
                   </div>
-                )} 
+                )}
               </Link>
-              <button
-                onClick={e => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  toggleFavorite(movie.id);
-                }}
-                className={`absolute bottom-2 right-2 px-2 py-1 rounded-full text-sm font-medium transition-colors 
-                  ${favorites.includes(movie.id) ? 'bg-yellow-500 text-black' : 'bg-gray-800 text-white hover:bg-gray-700'}`}
-              >
-                {favorites.includes(movie.id) ? 'Remove Favourite' : 'Add to Favourite'}
-              </button>
+
             </div>
           ))}
         </div>
