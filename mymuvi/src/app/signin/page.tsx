@@ -23,7 +23,7 @@ export default function SignInPage() {
             <div className="absolute inset-0 bg-black/60" />
             <div className="relative z-10 flex justify-center items-center min-h-screen">
                 <div className="bg-black/80 p-10 rounded-md w-[480px]">
-                    <h1 className="text-white text-3xl font-bold mb-6">Sign In</h1>
+                    <h1 className="text-yellow-500 text-3xl font-bold mb-6">Sign In</h1>
 
                     <form className="flex flex-col space-y-4 w-[22vw]" onSubmit={handleSubmit}>
                         <input
@@ -44,14 +44,14 @@ export default function SignInPage() {
                         />
                         <button
                             type="submit"
-                            className="bg-red-600 text-white font-bold py-3 rounded hover:bg-red-700 transition"
+                            className="bg-yellow-500 text-white font-bold py-3 rounded hover:bg-yellow-700 transition"
                         >
                             <Link  href={"/"}>Sign In</Link>
                         </button>
                     </form>
                     <div className="flex items-center justify-between text-gray-400 text-sm mt-4">
                         <label className="flex items-center gap-1">
-                            <input type="checkbox" className="accent-red-600" />
+                            <input type="checkbox" className="bg-yellow-500" />
                             Remember me
                         </label>
                         <Link href={"/"} className="hover:underline"> Need help?</Link>
@@ -67,13 +67,13 @@ export default function SignInPage() {
                     </div>
                     <p className="text-gray-400 text-sm mt-6">
                         New to myMuvi?{" "}
-                        <a href="#" className="text-white hover:underline">
+                        <a href="#" className="text-yellow-500 hover:underline">
                             Sign up now.
                         </a>
                     </p>
                     <p className="text-gray-500 text-xs mt-4">
                         This page is protected by Google reCAPTCHA to ensure you&apos;re not a bot.{" "}
-                        <a href="#" className="text-blue-500 hover:underline">
+                        <a href="#" className="text-yellow-500 hover:underline">
                             Learn more.
                         </a>
                     </p>
